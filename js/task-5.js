@@ -3,40 +3,36 @@ let message;
 const country = prompt('Введите страну назначения!');
 
 if (country === null) {
-    console.log('Отменено пользователем!');
+  console.log('Отменено пользователем!');
 } else {
+  switch (country.toLowerCase()) {
+    case 'китай':
+      price = 100;
+      break;
 
-    switch (country) {
-    case 'Китай':
-        price = 100;
-        break;
-    
-    case 'Чили':
-        price = 250;
-        break;
-    
-    case 'Австралия':
-        price = 170;
-        break;
-    
-    case 'Индия':
-        price = 80;
-        break;
-    
-    case 'Ямайка':
-        price = 120;
-        break;    
-    
-        default:
-        break;
-    }
+    case 'чили':
+      price = 250;
+      break;
 
-    if (price === undefined) {
-        alert('В вашей стране доставка не доступна');
-    } else {
-        console.log('Доставка в ' + country +' будет стоить ' + price + ' кредитов');
-    }
-    
+    case 'австралия':
+      price = 170;
+      break;
 
+    case 'индия':
+      price = 80;
+      break;
+
+    case 'ямайка':
+      price = 120;
+      break;
+
+    default:
+      break;
+  }
+
+  if (price === undefined) {
+    alert('В вашей стране доставка не доступна');
+  } else {
+    alert(`Доставка в ${country} будет стоить ${price} кредитов`);
+  }
 }
-
