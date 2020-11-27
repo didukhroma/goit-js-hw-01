@@ -1,5 +1,5 @@
 let price;
-let message;
+let countryName;
 const country = prompt('Введите страну назначения!');
 
 if (country === null) {
@@ -7,22 +7,27 @@ if (country === null) {
 } else {
   switch (country.toLowerCase()) {
     case 'китай':
+      countryName = 'Китай';
       price = 100;
       break;
 
     case 'чили':
+      countryName = 'Чили';
       price = 250;
       break;
 
     case 'австралия':
+      countryName = 'Австралия';
       price = 170;
       break;
 
     case 'индия':
+      countryName = 'Индия';
       price = 80;
       break;
 
     case 'ямайка':
+      countryName = 'Ямайка';
       price = 120;
       break;
 
@@ -30,9 +35,9 @@ if (country === null) {
       break;
   }
 
-  if (price === undefined) {
-    alert('В вашей стране доставка не доступна');
-  } else {
-    alert(`Доставка в ${country} будет стоить ${price} кредитов`);
-  }
+  const message =
+    price === undefined
+      ? 'В вашей стране доставка не доступна'
+      : `Доставка в ${countryName} будет стоить ${price} кредитов`;
+  alert(message);
 }
