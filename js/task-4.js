@@ -9,7 +9,7 @@ if (value === null) {
   console.log('Отменено пользователем!');
 } else if (Number.isNaN(Number(value))) {
   console.log('Некоректное число! ');
-} else if (Number(value) === 0) {
+} else if (Number(value) === 0 || Number(value) < 0) {
   console.log('Введите число больше 0!');
 } else {
   totalPrice = Number(value) * pricePerDroid;
